@@ -17,7 +17,19 @@ The project follows a standard Eclipse PDE three-tier structure:
 ### Key Classes
 
 - `NotesIn9Library` (`com.notesin9.base.library`) - XPages library registration, extends `AbstractXspLibrary`
-- `Strings` (`com.notesin9.base.util`) - String manipulation utilities
+- `Strings` (`com.notesin9.base.util`) - String manipulation utilities (isEmpty, isBlank, join, left/right, truncate, etc.)
+- `XPagesUtil` (`com.notesin9.base.util`) - XPages context utilities (getSession, scopes, resolveVariable, etc.)
+
+### Documentation
+
+- `SETUP.md` - Guide for building an XPages library from scratch, including Eclipse setup
+- `ROADMAP.md` - Planned features and implementation notes (resource provider, future utilities)
+
+## Coding Conventions
+
+- **Always use `org.openntf.domino` classes** instead of `lotus.domino` (OpenNTF handles recycling automatically)
+- Utility classes use static methods
+- No automated tests - testing done by deploying to Notes/Domino
 
 ## Build System
 
@@ -31,10 +43,10 @@ This is an Eclipse PDE project, not a Maven/Gradle project.
 
 ## Technical Details
 
-- **Java Version:** JavaSE-1.8
+- **Java Version:** JavaSE-1.8 (targeting Domino 14.5 with Java 21 in future)
 - **OSGi Activation:** Lazy (loaded on-demand)
 - **Library ID:** `com.notesin9.base.library`
-- **Dependencies:** `com.ibm.xsp.core`, `com.ibm.xsp.extsn`, `com.ibm.xsp.domino`, `com.ibm.xsp.designer`
+- **Dependencies:** `com.ibm.xsp.core`, `com.ibm.xsp.designer`, `com.ibm.commons`, `com.ibm.designer.runtime`, `org.openntf.domino`
 
 ## Testing
 
