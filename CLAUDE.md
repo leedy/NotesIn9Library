@@ -17,7 +17,7 @@ The project follows a standard Eclipse PDE three-tier structure:
 ### Key Classes
 
 - `NotesIn9Library` (`com.notesin9.base.library`) - XPages library registration, extends `AbstractXspLibrary`
-- `Strings` (`com.notesin9.base.util`) - String manipulation utilities (isEmpty, isBlank, join, left/right, truncate, etc.)
+- `StringHelper` (`com.notesin9.base.util`) - String manipulation utilities (isEmpty, isBlank, join, left/right, truncate, etc.)
 - `XPagesUtil` (`com.notesin9.base.util`) - XPages context utilities (getSession, scopes, resolveVariable, etc.)
 
 ### Documentation
