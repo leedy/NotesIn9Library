@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Automatic-Module-Name: com.notesin9.base
 Bundle-Name: NotesIn9 Base Library
 Bundle-SymbolicName: com.notesin9.base;singleton:=true
 Bundle-Version: 1.0.0.qualifier
@@ -10,5 +11,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
  com.ibm.xsp.core,
+ com.ibm.xsp.designer,
+ com.ibm.commons,
+ com.ibm.designer.runtime,
  org.openntf.domino;bundle-version="12.0.2"
 
