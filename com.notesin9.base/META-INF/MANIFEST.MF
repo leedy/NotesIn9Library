@@ -9,5 +9,6 @@ Bundle-Vendor: NotesIn9
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
- com.ibm.xsp.core
+ com.ibm.xsp.core,
+ org.openntf.domino;bundle-version="12.0.2"
 
