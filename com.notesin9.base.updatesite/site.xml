@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.notesin9.base.feature_1.0.0.qualifier.jar" id="com.notesin9.base.feature" version="1.0.0.qualifier">
+   </feature>
+</site>

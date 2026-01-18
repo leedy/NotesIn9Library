@@ -1,0 +1,16 @@
+# Compiled class files
+bin/
+
+# Eclipse build artifacts
+*.class
+
+# Update site build output
+com.notesin9.base.updatesite/features/
+com.notesin9.base.updatesite/plugins/
+
+# Eclipse metadata (optional - remove these lines if you want to track them)
+# .settings/
+
+# OS files
+.DS_Store
+Thumbs.db

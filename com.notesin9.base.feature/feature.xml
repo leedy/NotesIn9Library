@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.notesin9.base.feature"
+      label="NotesIn9 Base Library Feature"
+      version="1.0.0.qualifier">
+
+   <plugin
+         id="com.notesin9.base"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
