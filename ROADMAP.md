@@ -4,7 +4,41 @@ This document tracks planned features and implementation notes for future develo
 
 ---
 
-## Planned: Resource Provider for Static Assets
+## IN PROGRESS: Resource Provider for Static Assets
+
+### Current Status (2026-01-18)
+
+**Problem:** Bundle gets stuck in STARTING state with `java.net.MalformedURLException: no protocol: com.notesin9.base` when ResourceProvider extension is enabled.
+
+**What we've tried:**
+1. ✅ Activator works fine on its own - prints "NotesIn9 Base Library started."
+2. ❌ `BundleResourceProvider` with `Activator.instance.getBundle()` - fails
+3. ❌ `BundleResourceProvider` with `FrameworkUtil.getBundle()` - fails
+4. ❌ Direct `ResourceProvider` interface implementation - compile errors
+
+**Current compile errors to fix:**
+- `NotesIn9ResourceProvider.java` - need to check what methods the `Resource` interface actually requires
+- The `Resource` interface from `com.ibm.xsp.webapp.resources` may have different method signatures
+
+**Next steps:**
+1. Check the actual `Resource` interface API in the XSP runtime
+2. Consider looking at OpenNTF Domino API or ExtLib source for working examples
+3. Alternative: Use `UrlResourceProvider` base class if available
+
+**Files created:**
+- `com.notesin9.base/src/com/notesin9/base/resources/NotesIn9ResourceProvider.java`
+- `com.notesin9.base/src/com/notesin9/base/resources/Resources.java`
+- `com.notesin9.base/resources/web/css/.gitkeep`
+- `com.notesin9.base/resources/web/js/.gitkeep`
+
+**Files modified:**
+- `plugin.xml` - added GlobalResourceProvider extension
+- `build.properties` - added resources/ to bin.includes
+- `MANIFEST.MF` - added com.notesin9.base.resources to exports
+
+---
+
+## Original Plan: Resource Provider for Static Assets
 
 Serve CSS, JavaScript, and other static files from this library to consuming XPages applications.
 

@@ -5,4 +5,9 @@
       <service type="com.ibm.xsp.Library"
                class="com.notesin9.base.library.NotesIn9Library"/>
    </extension>
+
+   <extension point="com.ibm.commons.Extension">
+      <service type="com.ibm.xsp.GlobalResourceProvider"
+               class="com.notesin9.base.resources.ResourceProvider"/>
+   </extension>
 </plugin>

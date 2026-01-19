@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.notesin9.base.feature_1.0.0.202601181119.jar" id="com.notesin9.base.feature" version="1.0.0.202601181119">
+   <feature url="features/com.notesin9.base.feature_1.0.0.202601190858.jar" id="com.notesin9.base.feature" version="1.0.0.202601190858">
       <category name="notesin9"/>
    </feature>
    <category-def name="notesin9" label="NotesIn9 Libraries">
