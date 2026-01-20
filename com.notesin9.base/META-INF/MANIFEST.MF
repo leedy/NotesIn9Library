@@ -3,10 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: NotesIn9 Base Library
 Bundle-SymbolicName: com.notesin9.base;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.notesin9.base.Activator
 Export-Package: com.notesin9.base.library,
- com.notesin9.base.util,
- com.notesin9.base.resources
+ com.notesin9.base.util
 Bundle-Vendor: NotesIn9
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
