@@ -1,27 +1,22 @@
 package com.notesin9.base;
 
-import org.eclipse.core.runtime.Plugin;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-public class Activator extends Plugin {
+public class Activator implements BundleActivator {
 
-    public static Activator instance;
-
-    public Activator() {
-        super();
-        instance = this;
-    }
+    public static Bundle bundle;
 
     @Override
     public void start(BundleContext context) throws Exception {
-        super.start(context);
+        bundle = context.getBundle();
         System.out.println("NotesIn9 Base Library started.");
     }
 
     @Override
     public void stop(BundleContext context) throws Exception {
         System.out.println("NotesIn9 Base Library stopped.");
-        instance = null;
-        super.stop(context);
+        bundle = null;
     }
 }

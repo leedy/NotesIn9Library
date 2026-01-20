@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NotesIn9 ResourceProvider Test</title>
+    <link rel="stylesheet" href="css/notesin9.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .info {
+            background-color: #eee;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>NotesIn9 Library - ResourceProvider Test</h1>
+
+    <div class="notesin9-test">
+        If this box has an ORANGE background, the CSS is loading correctly!
+    </div>
+
+    <div class="info">
+        <strong>How to access this file:</strong><br/>
+        http://your-server/.ibmxspres/.notesin9/test.html
+    </div>
+
+    <div class="info">
+        <strong>If you see this page but NO orange box:</strong><br/>
+        The HTML is loading but the CSS path is broken. Check browser console (F12).
+    </div>
+
+    <div class="info">
+        <strong>If you see a 404 error:</strong><br/>
+        The ResourceProvider is not working. Check that the bundle is ACTIVE.
+    </div>
+</body>
+</html>

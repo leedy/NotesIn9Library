@@ -6,24 +6,34 @@ This document tracks planned features and implementation notes for future develo
 
 ## IN PROGRESS: Resource Provider for Static Assets
 
-### Current Status (2026-01-18)
+### Current Status (2026-01-19)
 
-**Problem:** Bundle gets stuck in STARTING state with `java.net.MalformedURLException: no protocol: com.notesin9.base` when ResourceProvider extension is enabled.
+**Problem:** Bundle gets stuck in STARTING state with `java.net.MalformedURLException: no protocol: com.notesin9.base` - this error occurs even with ALL extensions disabled and NO Activator.
 
-**What we've tried:**
-1. ✅ Activator works fine on its own - prints "NotesIn9 Base Library started."
-2. ❌ `BundleResourceProvider` with `Activator.instance.getBundle()` - fails
-3. ❌ `BundleResourceProvider` with `FrameworkUtil.getBundle()` - fails
-4. ❌ Direct `ResourceProvider` interface implementation - compile errors
+**What we've tried (all failed with same error):**
+1. ❌ Activator extending `Plugin` class
+2. ❌ Activator implementing `BundleActivator` interface
+3. ❌ No Activator at all (removed Bundle-Activator from MANIFEST.MF)
+4. ❌ All plugin.xml extensions commented out
+5. ❌ ResourceProvider using `FrameworkUtil.getBundle()` instead of Activator
+6. ❌ Removed `Automatic-Module-Name` from MANIFEST.MF
+7. ❌ Added `Import-Package: org.osgi.framework`
+8. ❌ Simplified ResourceProvider to bare minimum
 
-**Current compile errors to fix:**
-- `NotesIn9ResourceProvider.java` - need to check what methods the `Resource` interface actually requires
-- The `Resource` interface from `com.ibm.xsp.webapp.resources` may have different method signatures
+**Key observation:** The error happens even with a completely stripped-down bundle (no Activator, no extensions). This suggests the issue is NOT in our code, but in:
+- Domino 14.5's Update Site NSF processing
+- Something specific about how this bundle is being deployed
+- Possibly a caching issue on the server
+- The bundle symbolic name "com.notesin9.base" being parsed as a URL somewhere in Domino's OSGi runtime
 
-**Next steps:**
-1. Check the actual `Resource` interface API in the XSP runtime
-2. Consider looking at OpenNTF Domino API or ExtLib source for working examples
-3. Alternative: Use `UrlResourceProvider` base class if available
+**Next steps to try:**
+1. Try changing bundle symbolic name to something different (test if name is the issue)
+2. Clear OSGi workspace: `<Domino Data>\domino\workspace\.config`
+3. Try direct file deployment instead of Update Site NSF (if possible)
+4. Enable OSGi debug logging to get full stack trace
+5. Check HCL support/forums for Domino 14.5 Update Site NSF issues
+6. Compare with a known working bundle's JAR structure
+7. Try building with a different version of Eclipse PDE
 
 **Files created:**
 - `com.notesin9.base/src/com/notesin9/base/resources/NotesIn9ResourceProvider.java`

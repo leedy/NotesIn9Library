@@ -6,8 +6,10 @@
                class="com.notesin9.base.library.NotesIn9Library"/>
    </extension>
 
+   <!-- ResourceProvider disabled for testing
    <extension point="com.ibm.commons.Extension">
       <service type="com.ibm.xsp.GlobalResourceProvider"
                class="com.notesin9.base.resources.ResourceProvider"/>
    </extension>
+   -->
 </plugin>
